@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root,
+html[data-theme="light"],
+html.light {
+  color-scheme: light;
+  --bg: #FFFFFF;
+  --bg-secondary: #F8FAFC;
+  --surface: #FFFFFF;
+  --text-primary: #0F172A;
+  --text-body: #475569;
+  --text-muted: #64748B;
+  --accent: #0369A1;
+  --accent-hover: #075985;
+  --accent-soft: #E0F2FE;
+  --button-bg: #0369A1;
+  --button-text: #FFFFFF;
+  --border: #CBD5E1;
+  --focus: #0369A1;
+  --shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+}
+
+html[data-theme="dark"],
+html.dark {
+  color-scheme: dark;
+  --bg: #0B1120;
+  --bg-secondary: #111827;
+  --surface: #172033;
+  --text-primary: #F8FAFC;
+  --text-body: #CBD5E1;
+  --text-muted: #94A3B8;
+  --accent: #38BDF8;
+  --accent-hover: #7DD3FC;
+  --accent-soft: #0C2D48;
+  --button-bg: #38BDF8;
+  --button-text: #0B1120;
+  --border: #334155;
+  --focus: #38BDF8;
+  --shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg);
+  color: var(--text-body);
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text-body);
+  margin: 0;
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Color and background transitions (180ms, no transition: all) */
+body,
+header,
+main,
+section,
+footer,
+article,
+div,
+button,
+a,
+input,
+span,
+p,
+h1,
+h2,
+h3 {
+  transition-property: background-color, border-color, color, fill, stroke, box-shadow;
+  transition-duration: 180ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+    opacity: 1 !important;
+  }
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Subtle background grid pattern using border token */
+.bg-grid-pattern {
+  background-image: radial-gradient(var(--border) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
