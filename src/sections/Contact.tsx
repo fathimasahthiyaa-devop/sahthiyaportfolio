@@ -21,7 +21,7 @@ export const Contact: React.FC = () => {
   return (
     <section
       id="contact"
-      className="py-8 sm:py-12 md:py-14 scroll-mt-16 bg-bg text-text-primary relative flex flex-col justify-center"
+      className="py-8 sm:py-12 md:py-14 scroll-mt-20 sm:scroll-mt-24 bg-bg text-text-primary relative flex flex-col justify-center"
       aria-label="Contact Information"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col">

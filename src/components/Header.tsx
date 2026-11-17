@@ -20,7 +20,6 @@ export const Header: React.FC<HeaderProps> = ({ hasConfirmedProjects }) => {
     { name: 'Experience', href: '#experience', id: 'experience' },
     { name: 'Education', href: '#education', id: 'education' },
     ...(hasConfirmedProjects ? [{ name: 'Projects', href: '#projects', id: 'projects' }] : []),
-    { name: 'Contact', href: '#contact', id: 'contact' },
   ];
 
   useEffect(() => {
@@ -69,44 +68,44 @@ export const Header: React.FC<HeaderProps> = ({ hasConfirmedProjects }) => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-40 bg-surface/95 backdrop-blur-md border-b border-border transition-all duration-180 ${
-        scrolled ? 'py-3 shadow-theme' : 'py-4 sm:py-5'
+      className={`fixed top-0 left-0 w-full z-50 bg-surface border-b border-border transition-all duration-180 ${
+        scrolled ? 'shadow-theme' : ''
       }`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between h-14 sm:h-16">
           {/* Logo / Monogram */}
           <a
             href="#"
-            className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-focus rounded-lg p-1"
+            className="flex items-center gap-2.5 sm:gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-focus rounded-lg p-1 shrink-0"
             aria-label="Fathima Sahthiya - Return to top"
           >
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="w-10 h-10 rounded-xl bg-accent-soft border border-border flex items-center justify-center text-accent font-bold font-mono text-base tracking-wider shadow-xs group-hover:border-accent transition-colors duration-180"
+              className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-accent-soft border border-border flex items-center justify-center text-accent font-bold font-mono text-sm sm:text-base tracking-wider shadow-xs group-hover:border-accent transition-colors duration-180 shrink-0"
             >
               {personal.monogram}
             </motion.div>
-            <div className="flex flex-col">
-              <span className="text-sm font-bold tracking-tight text-text-primary group-hover:text-accent transition-colors duration-180">
+            <div className="flex flex-col min-w-0">
+              <span className="text-sm sm:text-base font-bold tracking-tight text-text-primary group-hover:text-accent transition-colors duration-180 whitespace-nowrap leading-tight">
                 {personal.displayName}
               </span>
-              <span className="text-[11px] font-mono text-text-muted">
-                Software Engineering Graduate
+              <span className="text-[11px] font-mono text-text-muted whitespace-nowrap leading-normal">
+                {personal.targetRole}
               </span>
             </div>
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-1 sm:gap-2" aria-label="Main Navigation">
+          <nav className="hidden md:flex items-center gap-1.5 lg:gap-2" aria-label="Main Navigation">
             {navLinks.map((link) => {
               const isActive = activeSection === link.id;
               return (
                 <a
                   key={link.name}
                   href={link.href}
-                  className={`relative px-3.5 py-1.5 text-sm font-semibold rounded-xl transition-colors duration-180 focus:outline-none focus-visible:ring-2 focus-visible:ring-focus ${
+                  className={`relative px-3 py-1.5 text-xs lg:text-sm font-semibold rounded-xl transition-colors duration-180 focus:outline-none focus-visible:ring-2 focus-visible:ring-focus ${
                     isActive
                       ? 'text-accent font-bold bg-accent-soft border border-border'
                       : 'text-text-body hover:text-text-primary hover:bg-accent-soft/40'
@@ -122,7 +121,7 @@ export const Header: React.FC<HeaderProps> = ({ hasConfirmedProjects }) => {
                 href={personal.publicCvUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="ml-2 inline-flex items-center gap-1.5 px-3.5 py-1.5 text-sm font-semibold text-text-primary bg-surface border border-border rounded-xl hover:text-accent hover:border-accent transition-colors duration-180 focus:outline-none focus-visible:ring-2 focus-visible:ring-focus shadow-xs"
+                className="ml-1 inline-flex items-center gap-1.5 px-3 py-1.5 text-xs lg:text-sm font-semibold text-text-primary bg-surface border border-border rounded-xl hover:text-accent hover:border-accent transition-colors duration-180 focus:outline-none focus-visible:ring-2 focus-visible:ring-focus shadow-xs"
               >
                 <FileText className="w-3.5 h-3.5 text-accent" />
                 <span>View CV</span>
@@ -135,8 +134,9 @@ export const Header: React.FC<HeaderProps> = ({ hasConfirmedProjects }) => {
                 href={personal.githubUrl}
                 target="_blank"
                 rel="noreferrer"
-                className="ml-1 p-2 text-text-muted hover:text-accent transition-colors duration-180 rounded-xl hover:bg-accent-soft focus:outline-none focus-visible:ring-2 focus-visible:ring-focus"
-                aria-label="GitHub Profile"
+                className="inline-flex items-center justify-center w-9 h-9 rounded-xl border border-border bg-surface text-text-muted hover:text-accent hover:border-accent hover:bg-accent-soft/40 transition-colors duration-180 focus:outline-none focus-visible:ring-2 focus-visible:ring-focus shadow-xs"
+                aria-label="GitHub Profile (opens in new tab)"
+                title="GitHub Profile"
               >
                 <Github className="w-4 h-4" />
               </a>
@@ -144,14 +144,14 @@ export const Header: React.FC<HeaderProps> = ({ hasConfirmedProjects }) => {
 
             <a
               href="#contact"
-              className="ml-2 inline-flex items-center gap-1.5 px-4 py-1.5 text-xs font-bold text-button-text bg-button-bg hover:bg-accent-hover rounded-xl shadow-xs transition-colors duration-180 focus:outline-none focus-visible:ring-2 focus-visible:ring-focus active:scale-95"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-bold text-button-text bg-button-bg hover:bg-accent-hover rounded-xl shadow-xs transition-colors duration-180 focus:outline-none focus-visible:ring-2 focus-visible:ring-focus active:scale-95"
             >
               <Mail className="w-3.5 h-3.5" />
               <span>Contact</span>
             </a>
 
             {/* Segmented Theme Toggle */}
-            <div className="ml-3">
+            <div className="ml-1.5 flex items-center">
               <ThemeToggle />
             </div>
           </nav>
@@ -182,7 +182,7 @@ export const Header: React.FC<HeaderProps> = ({ hasConfirmedProjects }) => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden fixed inset-x-0 top-[65px] bottom-0 bg-surface border-t border-border z-50 p-6 flex flex-col justify-between overflow-y-auto"
+            className="md:hidden fixed inset-x-0 top-[56px] sm:top-[64px] bottom-0 bg-surface border-t border-border z-50 p-6 flex flex-col justify-between overflow-y-auto"
           >
             <nav className="flex flex-col gap-2" aria-label="Mobile Navigation">
               {navLinks.map((link) => (
@@ -202,6 +202,21 @@ export const Header: React.FC<HeaderProps> = ({ hasConfirmedProjects }) => {
                   )}
                 </a>
               ))}
+
+              <a
+                href="#contact"
+                onClick={() => setIsOpen(false)}
+                className={`px-4 py-3 text-lg font-semibold rounded-xl transition-colors duration-180 flex items-center justify-between ${
+                  activeSection === 'contact'
+                    ? 'text-accent bg-accent-soft border border-border'
+                    : 'text-text-body hover:text-text-primary hover:bg-accent-soft/30'
+                }`}
+              >
+                <span>Contact</span>
+                {activeSection === 'contact' && (
+                  <span className="w-2 h-2 rounded-full bg-accent" />
+                )}
+              </a>
 
               {personal.publicCvUrl && (
                 <a

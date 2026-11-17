@@ -10,7 +10,7 @@ export const Experience: React.FC = () => {
   return (
     <section
       id="experience"
-      className="py-8 sm:py-12 md:py-14 scroll-mt-16 border-b border-border bg-bg text-text-primary relative flex flex-col justify-center"
+      className="py-8 sm:py-12 md:py-14 scroll-mt-20 sm:scroll-mt-24 border-b border-border bg-bg text-text-primary relative flex flex-col justify-center"
       aria-label="Professional Experience"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col">

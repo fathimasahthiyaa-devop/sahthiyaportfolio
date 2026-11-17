@@ -16,14 +16,14 @@ export const About: React.FC = () => {
   return (
     <section
       id="about"
-      className="py-8 sm:py-12 md:py-14 scroll-mt-16 border-b border-border bg-bg text-text-primary relative flex flex-col justify-center"
+      className="py-8 sm:py-12 md:py-14 scroll-mt-20 sm:scroll-mt-24 border-b border-border bg-bg text-text-primary relative flex flex-col justify-center"
       aria-label="About Me"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col">
         <SectionHeading
           eyebrow="Profile Overview"
           title={about.heading}
-          subtitle="Background in software engineering education, practical computing, and structured coordination"
+          subtitle="Bridging business requirements and software engineering through agile methodologies, systems analysis, and dual qualifications"
         />
 
         {/* Narrative Paragraph */}

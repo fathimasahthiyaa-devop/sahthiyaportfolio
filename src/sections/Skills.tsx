@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { portfolioData } from '../data/portfolio';
 import { SectionHeading } from '../components/SectionHeading';
 import { TechChip } from '../components/TechChip';
-import { Code2, Globe, Database, Cpu, Wrench, Kanban, CheckCircle2, Search, X, HardDrive, Network, Layers, FileText } from 'lucide-react';
+import { Code2, Globe, Database, Cpu, Wrench, Kanban, CheckCircle2, Search, X, HardDrive, Network, Layers, FileText, Users } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 export const Skills: React.FC = () => {
@@ -11,6 +11,11 @@ export const Skills: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState<string>('');
 
   const categoryIcons: Record<string, React.ElementType> = {
+    'Business Analysis & Requirements': FileText,
+    'Agile & Project Management': Kanban,
+    'Data & Systems Analysis': Database,
+    'Technical Literacy & Engineering': Code2,
+    'Stakeholder & Professional Skills': Users,
     'Programming Languages': Code2,
     'Web Technologies': Globe,
     'Databases & Data Management': Database,
@@ -62,14 +67,14 @@ export const Skills: React.FC = () => {
   return (
     <section
       id="skills"
-      className="py-8 sm:py-12 md:py-14 scroll-mt-16 border-b border-border bg-bg text-text-primary relative flex flex-col justify-center"
+      className="py-8 sm:py-12 md:py-14 scroll-mt-20 sm:scroll-mt-24 border-b border-border bg-bg text-text-primary relative flex flex-col justify-center"
       aria-label="Technical Skills"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col">
         <SectionHeading
           eyebrow="Competencies & Toolkit"
-          title="Technical & Professional Skills"
-          subtitle="Explore technical skills with dedicated icons across programming, databases, web development, and Agile coordination."
+          title="Business Analysis & Technical Skills"
+          subtitle="Core competencies spanning requirements engineering, Agile frameworks, data modeling, and technical stakeholder collaboration."
         />
 
         {/* User-Friendly Filter Controls (Search + Category Tabs) */}

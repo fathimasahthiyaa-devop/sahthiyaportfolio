@@ -24,6 +24,12 @@ import {
   Columns3,
   Calendar,
   Sparkles,
+  FileText,
+  Users,
+  CheckSquare,
+  Workflow,
+  Target,
+  Layers,
 } from 'lucide-react';
 
 interface TechChipProps {
@@ -102,7 +108,32 @@ export const TechChip: React.FC<TechChipProps> = ({ name, featured = false, icon
         return <Columns3 className="w-3.5 h-3.5 text-accent" />;
       case 'calendar':
       case 'microsoft project':
+      case 'sprint planning':
         return <Calendar className="w-3.5 h-3.5 text-accent" />;
+      case 'file-text':
+      case 'requirements gathering':
+      case 'functional specifications':
+      case 'technical documentation':
+        return <FileText className="w-3.5 h-3.5 text-accent" />;
+      case 'check-square':
+      case 'user stories & acceptance criteria':
+        return <CheckSquare className="w-3.5 h-3.5 text-accent" />;
+      case 'workflow':
+      case 'process mapping & workflows':
+      case 'process mapping':
+      case 'workflow design':
+        return <Workflow className="w-3.5 h-3.5 text-accent" />;
+      case 'target':
+      case 'gap analysis':
+        return <Target className="w-3.5 h-3.5 text-accent" />;
+      case 'layers':
+      case 'systems analysis':
+        return <Layers className="w-3.5 h-3.5 text-accent" />;
+      case 'users':
+      case 'stakeholder communication':
+      case 'client coordination':
+      case 'cross-functional collaboration':
+        return <Users className="w-3.5 h-3.5 text-accent" />;
       default:
         return <Sparkles className="w-3.5 h-3.5 text-accent" />;
     }

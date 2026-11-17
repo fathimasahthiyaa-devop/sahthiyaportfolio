@@ -26,7 +26,7 @@ export const Footer: React.FC = () => {
             </span>
           </div>
           <p className="mt-1 text-xs text-text-muted max-w-md">
-            Candidate for Associate Software Engineer roles. Bachelor of Engineering in Software Engineering (2024).
+            Candidate for Associate Business Analyst roles. BEng (Hons) in Software Engineering (2024) and Diploma in Business Management (Distinction).
           </p>
         </div>
 
@@ -72,7 +72,7 @@ export const Footer: React.FC = () => {
       <div className="max-w-6xl mx-auto w-full mt-8 pt-6 border-t border-border flex flex-col sm:flex-row items-center justify-between text-xs text-text-muted gap-2 text-center sm:text-left">
         <p>© {currentYear} {personal.fullName}. All rights reserved.</p>
         <div>
-          Target Role: Associate Software Engineer • Based in {personal.location}
+          Target Role: Associate Business Analyst • Based in {personal.location}
         </div>
       </div>
     </footer>
